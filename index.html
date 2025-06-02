@@ -3,115 +3,238 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Вера Логик — Математика легко с AI-репетитором в Telegram</title>
-
+  <title>Вера Логик — AI-бот по математике для школьников и студентов</title>
   <!-- SEO meta -->
-  <meta name="description" content="Изучи математику быстро и понятно с Вера Логик — AI-ботом в Telegram. Пошаговые объяснения, 15 дней бесплатно, решение задач по школьной и вузовской математике.">
-  <meta name="keywords" content="математика, бот по математике, репетитор по математике, ai бот, telegram бот, решение задач, математика 9 класс, подготовка к экзамену, онлайн репетитор, GPT по математике, чат-бот, школьная математика">
-  <meta name="author" content="Нуриддин" />
-
-  <!-- OpenGraph для соцсетей -->
-  <meta property="og:title" content="Вера Логик — AI-репетитор по математике в Telegram" />
-  <meta property="og:description" content="Решай задачи по математике с пошаговыми объяснениями. 15 дней бесплатно." />
+  <meta name="description" content="Вера Логик — современный AI-бот в Telegram для решения задач по математике, подготовки к ОГЭ, ЕГЭ и олимпиадам. Пошаговые объяснения, онлайн-помощь для 5–11 классов и вузов.">
+  <meta name="keywords" content="математика, бот по математике, репетитор по математике, решение задач, ОГЭ, ЕГЭ, олимпиада, Telegram, школьная математика, домашка, алгебра, геометрия, олимпиада по математике">
+  <meta name="author" content="Нуриддин">
+  <!-- OpenGraph / Twitter -->
+  <meta property="og:title" content="Вера Логик — AI-бот по математике для школьников и студентов" />
+  <meta property="og:description" content="Решай задачи по математике с объяснением, готовься к экзаменам и олимпиадам, пользуйся бесплатно 15 дней. Всё — в Telegram!" />
   <meta property="og:image" content="https://example.com/vera-preview.jpg" />
-  <meta property="og:url" content="https://example.com" />
+  <meta property="og:url" content="https://veralogic-site.vercel.app/" />
   <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Шрифт -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- Стили -->
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    html {
+      background: #f8fafd;
+      color: #16181a;
+      font-family: 'Inter', 'Montserrat', Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: #fdfdfd;
-      color: #111;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 2rem;
-      text-align: center;
     }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      margin-top: 2rem;
-      color: #333;
-    }
-
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
+    .wrapper {
+      width: 100%;
       max-width: 700px;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 2px 24px 0 #24283a13;
+      padding: 40px 24px 32px 24px;
+      margin: 32px 0 24px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-
-    .btn {
-      background: #007bff;
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 12px;
-      font-size: 1rem;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-
-    .btn:hover {
-      background: #0056b3;
-    }
-
     .badge {
-      background: #ffc107;
-      color: #111;
-      font-weight: bold;
-      padding: 0.3rem 0.7rem;
+      background: #f4d35e;
+      color: #222;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 0.45rem 1.1rem;
       border-radius: 999px;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+      box-shadow: 0 2px 8px #f4d35e33;
       display: inline-block;
     }
-
+    h1 {
+      font-family: 'Montserrat', 'Inter', Arial, sans-serif;
+      font-size: 2.7rem;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+      letter-spacing: -0.01em;
+    }
+    h2 {
+      font-family: 'Montserrat', 'Inter', Arial, sans-serif;
+      color: #1976d2;
+      font-size: 1.6rem;
+      margin: 36px 0 16px 0;
+      font-weight: 600;
+    }
+    h3 {
+      font-size: 1.15rem;
+      color: #314157;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    p, ul, ol, blockquote {
+      font-size: 1.13rem;
+      line-height: 1.6;
+      margin: 0 0 18px 0;
+      font-weight: 400;
+    }
+    ul {
+      padding-left: 22px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .btn-main {
+      background: linear-gradient(90deg, #4f8cff 0%, #0ea5e9 100%);
+      color: #fff;
+      border: none;
+      font-size: 1.22rem;
+      font-family: inherit;
+      padding: 1rem 2.1rem;
+      border-radius: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      margin: 22px 0 28px 0;
+      box-shadow: 0 2px 16px #0ea5e933;
+      transition: background 0.18s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-main:hover {
+      background: linear-gradient(90deg, #2563eb 0%, #0ea5e9 100%);
+      color: #fff;
+    }
+    nav {
+      margin: 18px 0 20px 0;
+      font-size: 1.05rem;
+      color: #717d95;
+      text-align: center;
+    }
+    nav a {
+      color: #1976d2;
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: 500;
+      transition: color .16s;
+    }
+    nav a:hover {
+      color: #0ea5e9;
+    }
+    .section {
+      width: 100%;
+      background: #f7fafd;
+      border-radius: 18px;
+      margin: 25px 0 10px 0;
+      padding: 20px 16px;
+      box-shadow: 0 1px 6px #e5e7eb26;
+    }
+    blockquote {
+      border-left: 4px solid #4f8cff;
+      padding-left: 16px;
+      margin: 20px 0;
+      color: #253757;
+      background: #f2f6fb;
+      border-radius: 8px;
+    }
     footer {
-      margin-top: 3rem;
-      font-size: 0.8rem;
-      color: #666;
+      text-align: center;
+      color: #7987a2;
+      font-size: 0.97rem;
+      margin: 18px 0 4px 0;
+      letter-spacing: 0.01em;
+    }
+    @media (max-width: 600px) {
+      .wrapper {padding: 18px 2vw;}
+      h1 {font-size: 2.1rem;}
+      h2 {font-size: 1.1rem;}
+      nav {font-size: 0.98rem;}
+      .btn-main {font-size: 1.05rem;}
     }
   </style>
 </head>
 <body>
-  <div class="badge">🎓 15 дней бесплатно</div>
+  <div class="wrapper">
+    <span class="badge">🎓 15 дней бесплатно</span>
+    <h1>Вера Логик — бот по математике в Telegram</h1>
+    <p>
+      <b>Умный AI-бот, который объясняет математику понятно и без стресса:</b><br>
+      домашка, экзамены, олимпиада — бот разберёт даже сложную задачу и покажет решение по шагам.
+    </p>
+    <a href="https://t.me/ShpargalkaAiBot" class="btn-main" target="_blank">Запустить бота в Telegram</a>
+    <nav>
+      <a href="/oge.html">ОГЭ</a>|
+      <a href="/ege.html">ЕГЭ</a>|
+      <a href="/algebra.html">Алгебра</a>|
+      <a href="/geometry.html">Геометрия</a>|
+      <a href="/olympiad.html">Олимпиады</a>
+    </nav>
 
-  <h1>Вера Логик — Математика с AI-ботом</h1>
-  <p>Хочешь понять математику, а не просто списать? <strong>Вера Логик</strong> — умный Telegram-бот, который объясняет задачи по шагам. Подходит для школьников, студентов и всех, кто хочет прокачать математику. Без стресса и репетиторов.</p>
+    <div class="section">
+      <h2>Что умеет бот Вера Логик?</h2>
+      <ul>
+        <li>Пошагово объясняет решения задач</li>
+        <li>Помогает с алгеброй, геометрией, тригонометрией</li>
+        <li>Готовит к ОГЭ, ЕГЭ и олимпиадам</li>
+        <li>Доступен для 5–11 классов и студентов</li>
+        <li>Решает задания любой сложности — от домашки до олимпиадных</li>
+        <li>Работает 24/7 в Telegram, быстро и без рекламы</li>
+      </ul>
+    </div>
 
-  <a href="https://t.me/ShpargalkaAiBot" class="btn" target="_blank">🚀 Перейти в Telegram</a>
+    <div class="section">
+      <h2>Бот помогает, если вы хотите:</h2>
+      <ul>
+        <li>Понять математику, а не просто списать ответ</li>
+        <li>Быстро решить задачу любой сложности</li>
+        <li>Получить объяснение для домашней работы</li>
+        <li>Подготовиться к экзамену или олимпиаде</li>
+        <li>Разобрать сложную тему в алгебре или геометрии</li>
+        <li>Найти современного онлайн-репетитора бесплатно</li>
+        <li>Использовать возможности AI прямо в Telegram</li>
+      </ul>
+    </div>
 
-  <h2>Чем полезен бот?</h2>
-  <p><strong>Вера Логик</strong> помогает с:</p>
-  <ul style="text-align: left; max-width: 600px;">
-    <li>📐 Алгебра, геометрия, тригонометрия</li>
-    <li>🧠 Подготовка к экзаменам (ОГЭ, ЕГЭ)</li>
-    <li>📊 Вузовская математика и линейная алгебра</li>
-    <li>📱 Мгновенные ответы прямо в Telegram</li>
-    <li>💡 Пошаговые объяснения решений</li>
-  </ul>
+    <div class="section">
+      <h2>Отзывы учеников и студентов</h2>
+      <blockquote>
+        <b>Алиса, 9 класс:</b> <br>
+        “Бот реально объясняет, почему так решать, а не просто даёт ответ. За месяц до ОГЭ по математике стала уверена в себе!”
+      </blockquote>
+      <blockquote>
+        <b>Давид, студент:</b> <br>
+        “Задавал вопросы по линейной алгебре, бот разобрал всё по шагам — экономит кучу времени и нервов.”
+      </blockquote>
+    </div>
 
-  <h2>Почему «Вера Логик»?</h2>
-  <p>
-    В отличие от тупых калькуляторов, Вера объясняет, как решать задачу и **почему** именно так.
-    Основана на GPT-4, обучена как настоящий репетитор.
-  </p>
+    <div class="section">
+      <h2>FAQ — часто задаваемые вопросы</h2>
+      <h3>Кто может пользоваться ботом?</h3>
+      <p>Все: школьники 5–11 классов, студенты, родители, кто хочет разобраться в математике или прокачать навыки для экзаменов и олимпиад.</p>
+      <h3>Бот помогает только по школьной программе?</h3>
+      <p>Нет! Решаем задачи любого уровня — от школьной домашки до сложных олимпиадных и вузовских.</p>
+      <h3>Сколько стоит подписка?</h3>
+      <p>15 дней бесплатно, дальше — дешевле, чем у репетиторов. Подключить можно прямо в Telegram.</p>
+    </div>
 
+    <div class="section" style="text-align:center;">
+      <img src="https://example.com/vera-preview.jpg" alt="Интерфейс Telegram-бота Вера Логик" style="max-width:440px; width:100%; margin:12px 0; border-radius:18px;">
+      <p style="font-size:0.95rem;color:#465366;">На изображении: как выглядит бот в Telegram — быстрое решение задач по математике для всех возрастов</p>
+    </div>
+  </div>
   <footer>
-    © 2025 Вера Логик | Разработано Нуриддином | <a href="https://t.me/ShpargalkaAiBot" target="_blank">t.me/ShpargalkaAiBot</a>
+    Быстрая навигация: 
+    <a href="/oge.html">ОГЭ</a> •
+    <a href="/ege.html">ЕГЭ</a> •
+    <a href="/algebra.html">Алгебра</a> •
+    <a href="/geometry.html">Геометрия</a> •
+    <a href="/olympiad.html">Олимпиады</a> •
+    <a href="https://t.me/ShpargalkaAiBot" target="_blank">Telegram-бот</a>
+    <br>© 2025 Вера Логик | Сделано для людей, а не только для поисковиков 😎
   </footer>
 </body>
 </html>
